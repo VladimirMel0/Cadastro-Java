@@ -8,6 +8,10 @@ let telefone = document.querySelector('#Telefone');
 let labelTelefone = document.querySelector('#LabelTelefone');
 let validTelefone = false;
 
+let email = document.querySelector('#Email');
+let labelEmail = document.querySelector('#LabelEmail');
+let validEmail = false;
+
 let senha = document.querySelector('#Senha');
 let labelSenha = document.querySelector('#LabelSenha');
 let validSenha = false;
@@ -47,6 +51,20 @@ telefone.addEventListener('keyup', () => {
         validTelefone = true
     }
 })
+email.addEventListener('keyup', () => {
+    if (email.value.length <= 7) {
+        labelEmail.setAttribute('style', 'color:red')
+        labelEmail.innerHTML = 'email'
+        email.setAttribute('style', 'border-color: red')
+        validEmail = false
+    }
+    else {
+        labelEmail.setAttribute('style', 'color:green')
+        labelTelefone.innerHTML = 'email'
+        email.setAttribute('style', 'border-color: green')
+        validEmail = true
+    }
+})
 senha.addEventListener('keyup', () => {
     if (senha.value.length <= 4) {
         labelSenha.setAttribute('style', 'color:red')
@@ -79,7 +97,7 @@ ConfSenha.addEventListener('keyup', () => {
 
 
 function cadastrar() {
-    if (validNome && validTelefone && validSenha && validconfSenha) {
+    if (validNome && validTelefone && validEmail && validSenha && validconfSenha) {
 
         fetch("http://localhost:8080/cadastrar"),
         {
@@ -92,6 +110,7 @@ function cadastrar() {
             body: JSON.stringify({
                 nome: nome.value,
                 telefone: telefone.value,
+                email: email.value,
                 senha: senha.value,
                 confSenha: confSenha.value,
             })
@@ -103,8 +122,10 @@ function cadastrar() {
 function limpar() {
     nome.value = "";
     telefone.value = "";
+    email.value = "";
     senha.value = "";
     confSenha.value = "";
+
 };
 
 formulario.addEventListener("submit", function (e) {
