@@ -99,7 +99,7 @@ ConfSenha.addEventListener('keyup', () => {
 function cadastrar() {
     if (validNome && validTelefone && validEmail && validSenha && validconfSenha) {
 
-        fetch("http://localhost:8080/cadastrar"),
+        fetch("http://localhost:8080/usuarios"),
         {
             Headers: {
                 'Accept': 'application/json',
@@ -128,8 +128,8 @@ function limpar() {
 
 };
 
-formulario.addEventListener("submit", function (e) {
-    e.preventDefault();
+formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
     cadastrar();
     limpar();
 });
