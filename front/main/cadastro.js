@@ -79,7 +79,7 @@ senha.addEventListener('keyup', () => {
     }
 })
 
-ConfSenha.addEventListener('keyup', () => {
+confSenha.addEventListener('keyup', () => {
     if (senha.value != confSenha.value) {
         labelconfSenha.setAttribute('style', 'color:red')
         labelconfSenha.innerHTML = 'Senhas não conferem'
@@ -99,23 +99,22 @@ ConfSenha.addEventListener('keyup', () => {
 function cadastrar() {
     if (validNome && validTelefone && validEmail && validSenha && validconfSenha) {
 
-        fetch("http://localhost:8080/usuarios"),
+        fetch("http://localhost:8080/usuarios",
         {
             Headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                "Accept": "application/json",
+                "Content-Type": "application/json"
 
             },
-            method: 'POST',
+            method: "POST",
             body: JSON.stringify({
                 nome: nome.value,
                 telefone: telefone.value,
                 email: email.value,
                 senha: senha.value,
-                confSenha: confSenha.value,
             })
 
-        }
+        });
     };
 };
 
@@ -128,8 +127,8 @@ function limpar() {
 
 };
 
-formulario.addEventListener("submit", function (event) {
-    event.preventDefault();
+formulario.addEventListener("submit", function (e) {
+    e.preventDefault();
     cadastrar();
     limpar();
 });
