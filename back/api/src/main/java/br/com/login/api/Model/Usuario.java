@@ -15,13 +15,13 @@ public class Usuario {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "nome", length = 200, nullable = true)
+    @Column(name = "nome", length = 200, nullable = false)
     private String nome;
-    @Column(name = "email", length = 100, nullable = true)
+    @Column(name = "email", length = 100, nullable = false)
     private String email;
-    @Column(name = "senha", columnDefinition = "TEXT", nullable = true)
+    @Column(name = "senha", columnDefinition = "TEXT", nullable = false)
     private String senha;
-    @Column(name = "telefone", length = 25, nullable = true)
+    @Column(name = "telefone", length = 25, nullable = false)
     private String telefone;
 
     public int getId() {
