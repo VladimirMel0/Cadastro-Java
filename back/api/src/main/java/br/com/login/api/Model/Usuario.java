@@ -1,4 +1,4 @@
-package br.com.login.api.Modal;
+package br.com.login.api.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
