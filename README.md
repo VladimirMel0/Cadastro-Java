@@ -1,6 +1,9 @@
 # Projeto Crud Challenge
+Projeto de um sistema tanto front-end quanto back-end, meu foco foi aprimorar minhas habilidades no Java para Back-end.
 
-Projeto desafio Crud em Java.
+No front usei JavaScripit puro, para fazer as validações e conexão com a API criada que salva os dados em um Banco de dados (MySQL), no Back-end utilizei o framework Spring, usando o Spring-Boot para a Criação da API, Spring-Security para fazer a criptografia dos dados sensiveis (Senha) e também Spring-Validation para fazer uma nova validação dos dados, direto na API.
+
+Para a Criação do Crud utilizei o JpaRepository.
 
 ## How To Use
 
