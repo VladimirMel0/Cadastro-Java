@@ -35,7 +35,7 @@ public class Usuario {
 
     @NotBlank (message = "O telefone é obrigatório!")
     @Size(min = 11, max = 11, message = "Insira um telefone válido!")
-    @Column(name = "telefone", length = 25, nullable = false)
+    @Column(name = "telefone", length = 11, nullable = false)
     private String telefone;
 
     public int getId() {
